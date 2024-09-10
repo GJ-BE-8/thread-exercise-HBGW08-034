@@ -19,12 +19,13 @@ public class App
     public static void main( String[] args )
     {
         //TODO#1 CounterHandler 객체를 생성 합니다. countMaxSize : 10
-        CounterHandler counterHandler;
+        CounterHandler counterHandler = new CounterHandler(10);
 
         //TODO#2 threadA 생성시 counterHandler 객체를 paramter로 전달 합니다.
-        Thread threadA;
+        Thread threadA = new Thread(counterHandler);
 
         //TODO#3 threadA의 name을 'my-counter-A' 로 설정 합니다.
+        threadA.setName("my-counter-A");
 
         //TODO#4 threadB 생성시 counterHandler 객체를 paramter로 전달 합니다.
         Thread threadB;
