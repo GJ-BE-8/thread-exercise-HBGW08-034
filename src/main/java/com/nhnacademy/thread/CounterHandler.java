@@ -17,7 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CounterHandler implements Runnable  {
     private final long countMaxSize;
-
     private long count;
 
     public CounterHandler(long countMaxSize) {
@@ -26,7 +25,7 @@ public class CounterHandler implements Runnable  {
         }
 
         this.countMaxSize = countMaxSize;
-        this.count=0l;
+        this.count = 0L;
     }
 
     @Override
