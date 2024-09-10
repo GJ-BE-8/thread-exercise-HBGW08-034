@@ -24,9 +24,8 @@ public class CounterHandler implements Runnable  {
         if(countMaxSize<=0){
             throw new IllegalArgumentException();
         }
-
         this.countMaxSize = countMaxSize;
-        this.count=0l;
+        this.count = 0L;
     }
 
     @Override
