@@ -38,7 +38,7 @@ public class Counter {
               Thread.sleep method를 사용하세요.
               https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Thread.html#sleep(java.time.Duration)
             */
-            Thread.sleep(1);
+            Thread.sleep(1000);
             count++;
 
             /*TODO#5 count 출력
@@ -48,7 +48,6 @@ public class Counter {
              */
             log.info("name:{}", Thread.currentThread().getName());
             log.info("count:{}", count);
-
         }while (count<countMaxSize);
     }
 }
