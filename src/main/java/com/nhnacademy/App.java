@@ -16,11 +16,9 @@ import com.nhnacademy.thread.CounterHandler;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class App
-{
-    public static void main( String[] args )
-    {
-        CounterHandler counterHandler = new CounterHandler(10l);
+public class App {
+    public static void main( String[] args ) {
+        CounterHandler counterHandler = new CounterHandler(10L);
         Thread thread = new Thread(counterHandler);
         log.debug("thread-state:{}",thread.getState());
         thread.setName("my-counter");
