@@ -15,9 +15,6 @@ package com.nhnacademy;
 import com.nhnacademy.thread.CounterHandler;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.management.monitor.CounterMonitor;
-import javax.management.monitor.Monitor;
-
 @Slf4j
 public class App {
 
@@ -42,9 +39,11 @@ public class App {
 
         try {
             //TODO#3 - Main Thread에서 2초 후 monitor를 이용하여 대기하고 있는 threadA를 깨웁니다.
+            // 만약 thrad가 여러개면 어케 깨움??
+            // 여기 예제에서는 그냥 thread를 깨우는게 목적임 threadA라고해서 그렇지
+            Thread.sleep(2000);
             synchronized (monitor) {
-                Thread.sleep(2000);
-//                monitor.notify();
+                monitor.notify();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
