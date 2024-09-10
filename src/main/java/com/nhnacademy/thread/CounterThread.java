@@ -20,7 +20,6 @@ import java.util.Objects;
 //TODO#1 CounterThread는 Thread를 상속 합니다.
 public class CounterThread extends Thread {
     private final long countMaxSize;
-
     private long count;
 
     public CounterThread(String name, long countMaxSize) {
@@ -40,7 +39,6 @@ public class CounterThread extends Thread {
 
     @Override
     public void run() {
-
         /*TODO#4 run method를 구현 합니다.
             1초에 한 번식 다음과 같이 출력 됩니다.
             - Thread.sleep(1000)을 사용하세요.
@@ -51,8 +49,8 @@ public class CounterThread extends Thread {
         do {
             try {
                 Thread.sleep(1000);
-                log.info("thread:", this.getName());
-                log.info("count:", count);
+                log.info("thread:{}", this.getName());
+                log.info("count:{}", ++count);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
