@@ -32,12 +32,11 @@ public class CounterIncreaseHandler implements Runnable {
     @Override
     public void run() {
         //TODO#2-2 현제 Thread의 interrupted이 ture <--  while의 종료조건 : interrupt가 발생 했다면 종료 합니다.
-        while(Thread.interrupted()) {
+        while(Thread.interrupted() == true) {
             try {
                 Thread.sleep(1000);
                 //TODO 2-3 sharedCounter의 count를 1증가 시키고 count값을 반환 합니다.
-                long count = sharedCounter.getCount();
-                count++;
+                long count = sharedCounter.increaseAndGet();
                 log.debug("thread:{}, count:{}", Thread.currentThread().getName(), count);
             } catch (Exception e) {
                 log.debug("{} - interrupt!",Thread.currentThread().getName());

@@ -34,11 +34,11 @@ public class SharedCounter {
 
     public long increaseAndGet(){
         //TODO#1-3 count = count + 1 증가시키고 count를 반환 합니다.
-        return count++;
+        return count = count + 1;
     }
 
     public long decreaseAndGet(){
         //TODO#1-4 count = count-1 감소시키고 count를 반환 합니다.
-        return count--;
+        return count = count - 1;
     }
 }
