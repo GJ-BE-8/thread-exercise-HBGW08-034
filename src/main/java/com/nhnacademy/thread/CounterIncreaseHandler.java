@@ -23,16 +23,16 @@ public class CounterIncreaseHandler implements Runnable {
 
     public CounterIncreaseHandler(SharedCounter sharedCounter) {
         //TODO#2-1 sharedCounter를 초기화 합니다.  sharedCounter가 null 이면 IllegalArgumentException이 발생 합니다.
-        this.sharedCounter = sharedCounter;
         if (sharedCounter == null) {
             throw new IllegalArgumentException();
         }
+        this.sharedCounter = sharedCounter;
     }
 
     @Override
     public void run() {
         //TODO#2-2 현제 Thread의 interrupted이 ture <--  while의 종료조건 : interrupt가 발생 했다면 종료 합니다.
-        while(Thread.interrupted() == true) {
+        while(Thread.interrupted() != true) {
             try {
                 Thread.sleep(1000);
                 //TODO 2-3 sharedCounter의 count를 1증가 시키고 count값을 반환 합니다.
